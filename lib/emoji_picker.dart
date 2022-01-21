@@ -294,7 +294,9 @@ class _EmojiPickerState extends State<EmojiPicker> {
     super.initState();
 
     updateEmojis().then((_) {
-      loaded = true;
+      setState(() {
+        loaded = true;
+      });
     });
   }
 
