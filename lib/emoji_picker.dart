@@ -335,8 +335,8 @@ class _EmojiPickerState extends State<EmojiPicker> {
     Map<String, String?> newMap = Map<String, String?>();
 
     for (String key in map.keys) {
-      bool isAvailable = await (_isEmojiAvailable(map[key]) as FutureOr<bool>);
-      if (isAvailable) {
+      bool? isAvailable = await (_isEmojiAvailable(map[key]));
+      if (isAvailable!) {
         newMap[key] = map[key];
       }
     }
